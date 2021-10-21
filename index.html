@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>To-Do List app</title>
+</head>
+<body>
+    <div id="app">
+        <form action="">
+            <input type="search" placeholder="Enter your task" id="as_input">
+            <div id="as_btn" onclick="addTask()">
+                <a href="#">Add</a>
+            </div>
+        </form>
+
+        <div class="tasks">
+            <div class="tasks_bar">
+                <a href="#tasks" class="active">All Tasks</a>
+                <a href="#complated_tasks">Complated Tasks</a>
+            </div>
+            <div class="tasks_group">
+                <ul id="tasks"></ul>
+                <ul id="complated_tasks"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allTasks = ['There are your Tasks']
+        let compTasks = []
+
+        let inp = document.getElementById('as_input')
+        let tasks = document.getElementById('tasks')
+        let cTasks = document.getElementById('complated_tasks')
+
+        function addTask(){
+            if(inp.value == ''){
+                alert("You ...")
+            }else{
+                allTasks.unshift(inp.value)
+                tasks.innerHTML = ''
+                inp.value = ''
+                loadTasks()
+            }
+        }
+
+        // load tasks
+        function loadTasks(){
+            for(let i=0;i<allTasks.length;i++){
+            tasks.innerHTML+=`
+                <li class="task">
+                    <input type="checkbox" onclick="checkBox('${allTasks[i]}',${i})">
+                    <p>${allTasks[i]}</p>
+                    <button onclick="delTask(${i})" class='fad fa-trash'></button>
+                </li>`
+            }
+        }loadTasks()
+
+        // delete selecting list
+        function delTask(index){
+            allTasks.splice(index,1)
+            tasks.innerHTML = ''
+            loadTasks()
+        }
+
+        // checkbox checked
+        function checkBox(val,index){
+            let tasks = document.querySelectorAll('.task')
+            let checkbox = tasks[index].querySelector("input")
+            let text = tasks[index].querySelector("p")  
+            checkbox.checked ? text.style.textDecoration="line-through" : text.style.textDecoration="none"
+            
+            compTasks.unshift(val)
+            cTasks.innerHTML = ''
+            loadCompTasks()
+            setTimeout(() => {
+                delTask(index)
+            }, 1000);
+        }
+
+        // load tasks
+        function loadCompTasks(){
+            for(let i=0;i<compTasks.length;i++){
+            cTasks.innerHTML+=`
+                <li class="task">
+                    <h2 class="fad fa-check-circle" style="color:#00ad99;"></h2>
+                    <p>${compTasks[i]}</p>
+                    <button onclick="delCompTask(${i})" class='fad fa-trash'></button>
+                </li>`
+            }
+        }
+
+        // delete selecting list
+        function delCompTask(index){
+            compTasks.splice(index,1)
+            cTasks.innerHTML = ''
+            loadCompTasks()
+        }
+
+    </script>
+</body>
+</html>

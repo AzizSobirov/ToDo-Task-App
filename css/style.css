@@ -1,0 +1,200 @@
+@import url("https://aziz-sobirov.github.io/AS-library/css/as.css");
+#app {
+  min-height: 100vh;
+  padding: 0 5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#app form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0 0 0 2.5px #eaebeb;
+          box-shadow: 0 0 0 2.5px #eaebeb;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#app form input {
+  padding: 8px;
+  border-radius: 4px 0 0 4px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#app form input:hover, #app form input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#app form #as_btn {
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+}
+
+#app form #as_btn a {
+  font-weight: 500;
+}
+
+#app .tasks {
+  position: relative;
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 0 2px #00ad99;
+          box-shadow: 0 0 0 2px #00ad99;
+}
+
+#app .tasks_bar {
+  padding: 10px;
+  height: 55px;
+  background: #eaebeb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-radius: 5px 5px 0 0;
+  -webkit-box-shadow: 0 0 0 2px #eaebeb;
+          box-shadow: 0 0 0 2px #eaebeb;
+}
+
+#app .tasks_bar a {
+  padding: 5px 25px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#app .tasks_bar a:focus, #app .tasks_bar a.active, #app .tasks_bar a:hover {
+  font-weight: 500;
+  -webkit-box-shadow: 0 3px 0 #00ad99;
+          box-shadow: 0 3px 0 #00ad99;
+}
+
+#app .tasks_group {
+  min-width: 100%;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+#app .tasks_group ul {
+  padding: 10px;
+  min-width: 100%;
+  min-height: 300px;
+  max-height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-align: center;
+}
+
+#app .tasks_group ul li {
+  padding: 10px 5vw;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #f1f1f1;
+  border-radius: 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#app .tasks_group ul li:not(:first-child) {
+  margin-top: 5px;
+}
+
+#app .tasks_group ul li:hover {
+  background: #e1e1e1;
+}
+
+#app .tasks_group ul li input {
+  -webkit-appearance: none;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 0 3px #00ad99;
+          box-shadow: 0 0 0 3px #00ad99;
+  border-radius: 50%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#app .tasks_group ul li input:checked {
+  -webkit-box-shadow: 0 0 0 3px #00ad99, inset 0 0 0 3px #fff, inset 0 0 0 10px #00ad99;
+          box-shadow: 0 0 0 3px #00ad99, inset 0 0 0 3px #fff, inset 0 0 0 10px #00ad99;
+}
+
+#app .tasks_group ul li p {
+  font-weight: 500;
+  max-width: 70%;
+}
+
+#app .tasks_group ul li button {
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #ff0066;
+  font-size: 18px;
+  background: #fff;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=style.css.map */

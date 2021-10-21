@@ -1,0 +1,126 @@
+@import url('https://aziz-sobirov.github.io/AS-library/css/as.css');
+
+@mixin center {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+#app{
+    min-height:100vh;
+    padding: 0 5vw;
+    @include center();
+    flex-direction: column;
+    form{
+        @include center();
+        box-shadow: 0 0 0 2.5px #eaebeb;
+        border-radius: 5px;
+        overflow: hidden;
+
+        input{
+            padding: 8px;
+            border-radius: 4px 0 0 4px;
+            box-shadow:none ;
+            &:hover,&:focus{
+                box-shadow: none;
+            }
+        }
+        #as_btn{
+            cursor: pointer;
+            border-radius: 0 4px 4px 0;
+            a{
+                font-weight: 500;
+            }
+        }
+    }
+
+    .tasks{
+        position: relative;
+        margin-top: 20px;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 0 0 0 2px #00ad99;
+        &_bar{
+            padding: 10px;
+            height: 55px;
+            background: #eaebeb;
+            @include center();
+            justify-content: space-evenly;
+            border-radius: 5px 5px 0 0;
+            box-shadow: 0 0 0 2px #eaebeb;
+            a{
+                padding: 5px 25px;
+                transition: 0.5s;
+                &:focus,&.active,&:hover{
+                    font-weight: 500;
+                    box-shadow: 0 3px 0 #00ad99;
+                }
+            }
+        }
+        
+        &_group{
+            min-width: 100%;
+            max-width: 100%;
+            @include center();
+            justify-content: flex-start;
+            scroll-snap-type: x mandatory;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            ul{
+                padding: 10px;
+                min-width: 100%;
+                min-height: 300px;
+                max-height: 300px;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                scroll-snap-align: center;
+                li{
+                    padding:10px 5vw;
+                    width: 100%;
+                    @include center();
+                    justify-content: space-between;
+                    background: #f1f1f1;
+                    border-radius: 5px;
+                    transition: 0.5s;
+                    &:not(:first-child){
+                        margin-top: 5px;
+                    }
+                    &:hover{
+                        background: #e1e1e1;
+                    }
+        
+                    input{
+                        -webkit-appearance: none;
+                        cursor: pointer;
+                        height: 20px;
+                        width: 20px;
+                        background: #fff;
+                        box-shadow:0 0 0 3px#00ad99;
+                        border-radius: 50%;
+                        transition: 0.5s;
+                        &:checked{
+                            box-shadow:0 0 0 3px#00ad99,
+                            inset 0 0 0 3px #fff,
+                            inset 0 0 0 10px #00ad99;
+                        }
+                    }
+        
+                    p{
+                        font-weight: 500;
+                        max-width: 70%;
+                    }
+        
+                    button{
+                        cursor: pointer;
+                        height: 40px;
+                        width: 40px;
+                        @include center();
+                        color: #ff0066;
+                        font-size:18px;
+                        background: #fff;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
