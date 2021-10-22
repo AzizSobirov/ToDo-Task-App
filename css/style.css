@@ -311,4 +311,13 @@
 #app .tasks_form #as_btn:hover a {
   color: #005f73;
 }
+
+@media (min-width: 758px) {
+  .tasks {
+    max-width: 40vw;
+  }
+  .tasks_form input {
+    min-width: 32vw;
+  }
+}
 /*# sourceMappingURL=style.css.map */

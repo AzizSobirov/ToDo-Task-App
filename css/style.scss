@@ -179,3 +179,12 @@
         }
     }
 }
+
+@media (min-width:758px){
+    .tasks{
+        max-width: 40vw;
+        &_form input{
+            min-width:32vw;
+        }
+    }
+}
