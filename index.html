@@ -7,29 +7,53 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>To-Do List app</title>
 </head>
-<body>
-    <div id="app">
-        <form action="">
-            <input type="search" placeholder="Enter your task" id="as_input">
-            <div id="as_btn" onclick="addTask()">
-                <a href="#">Add</a>
-            </div>
-        </form>
+<body onload="as_onload()">
+    <div id="as_load"></div>
 
+    <div id="app">
         <div class="tasks">
             <div class="tasks_bar">
                 <a href="#tasks" class="active">All Tasks</a>
                 <a href="#complated_tasks">Complated Tasks</a>
             </div>
             <div class="tasks_group">
-                <ul id="tasks"></ul>
-                <ul id="complated_tasks"></ul>
+                <ul id="tasks">
+                    <li style="flex-direction: column;">
+                        <h3>Follow Me</h3>
+                        <div class="for_follow">
+                            <a href="https://www.facebook.com/aziz.webdev" class="fab fa-facebook"></a>
+                            <a href="https://www.instagram.com/aziz.webdev" class="fab fa-instagram"></a>
+                            <a href="https://t.me//Portfolio_AzizSobirov" class="fab fa-telegram"></a>
+                            <a href="https://github.com/AzizSobirov" class="fab fa-github"></a>
+                        </div>
+                        <p>&copy Aziz Sobirov</p>
+                    </li>
+                </ul>
+                <ul id="complated_tasks">
+                    <li style="flex-direction: column;">
+                        <h3>Follow Me</h3>
+                        <div class="for_follow">
+                            <a href="https://www.facebook.com/aziz.webdev" class="fab fa-facebook"></a>
+                            <a href="https://www.instagram.com/aziz.webdev" class="fab fa-instagram"></a>
+                            <a href="https://t.me//Portfolio_AzizSobirov" class="fab fa-telegram"></a>
+                            <a href="https://github.com/AzizSobirov" class="fab fa-github"></a>
+                        </div>
+                        <p>&copy Aziz Sobirov</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="tasks_form">
+                <input type="search" placeholder="Enter your task" id="as_input">
+                <div id="as_btn" onclick="addTask()">
+                    <a href="#">Add</a>
+                </div>
             </div>
         </div>
     </div>
 
+    <script src="https://aziz-sobirov.github.io/AS-library/js/anime-min.js"></script>
     <script>
-        let allTasks = ['There are your Tasks']
+        let allTasks = []
         let compTasks = []
 
         let inp = document.getElementById('as_input')
@@ -38,7 +62,7 @@
 
         function addTask(){
             if(inp.value == ''){
-                alert("You ...")
+                alert("ggg")
             }else{
                 allTasks.unshift(inp.value)
                 tasks.innerHTML = ''
@@ -72,13 +96,13 @@
             let checkbox = tasks[index].querySelector("input")
             let text = tasks[index].querySelector("p")  
             checkbox.checked ? text.style.textDecoration="line-through" : text.style.textDecoration="none"
-            
+
             compTasks.unshift(val)
             cTasks.innerHTML = ''
             loadCompTasks()
             setTimeout(() => {
                 delTask(index)
-            }, 1000);
+            }, 1500);
         }
 
         // load tasks
@@ -86,7 +110,7 @@
             for(let i=0;i<compTasks.length;i++){
             cTasks.innerHTML+=`
                 <li class="task">
-                    <h2 class="fad fa-check-circle" style="color:#00ad99;"></h2>
+                    <h2 class="fad fa-check-circle" style="color:#005f73;"></h2>
                     <p>${compTasks[i]}</p>
                     <button onclick="delCompTask(${i})" class='fad fa-trash'></button>
                 </li>`
@@ -101,5 +125,6 @@
         }
 
     </script>
+    <script src="https://aziz-sobirov.github.io/AS-library/js/as.js"></script>
 </body>
 </html>

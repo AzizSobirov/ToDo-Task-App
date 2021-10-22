@@ -11,47 +11,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#app form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-shadow: 0 0 0 2.5px #eaebeb;
-          box-shadow: 0 0 0 2.5px #eaebeb;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-#app form input {
-  padding: 8px;
-  border-radius: 4px 0 0 4px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-#app form input:hover, #app form input:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-#app form #as_btn {
-  cursor: pointer;
-  border-radius: 0 4px 4px 0;
-}
-
-#app form #as_btn a {
-  font-weight: 500;
+  background: #f1f1f1;
 }
 
 #app .tasks {
@@ -59,14 +19,15 @@
   margin-top: 20px;
   width: 100%;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 0 2px #00ad99;
-          box-shadow: 0 0 0 2px #00ad99;
+  -webkit-box-shadow: 0 0 0 2.5px #005f73;
+          box-shadow: 0 0 0 2.5px #005f73;
+  background: #fff;
 }
 
 #app .tasks_bar {
   padding: 10px;
   height: 55px;
-  background: #eaebeb;
+  background: #005f73;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,20 +41,20 @@
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   border-radius: 5px 5px 0 0;
-  -webkit-box-shadow: 0 0 0 2px #eaebeb;
-          box-shadow: 0 0 0 2px #eaebeb;
 }
 
 #app .tasks_bar a {
+  color: #ffffff90;
   padding: 5px 25px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
-#app .tasks_bar a:focus, #app .tasks_bar a.active, #app .tasks_bar a:hover {
+#app .tasks_bar a.active, #app .tasks_bar a:hover {
+  color: #fff;
   font-weight: 500;
-  -webkit-box-shadow: 0 3px 0 #00ad99;
-          box-shadow: 0 3px 0 #00ad99;
+  -webkit-box-shadow: 0 3px 0 #fff;
+          box-shadow: 0 3px 0 #fff;
 }
 
 #app .tasks_group {
@@ -120,8 +81,8 @@
 #app .tasks_group ul {
   padding: 10px;
   min-width: 100%;
-  min-height: 300px;
-  max-height: 300px;
+  min-height: 60vh;
+  max-height: 60vh;
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-snap-align: center;
@@ -162,16 +123,16 @@
   height: 20px;
   width: 20px;
   background: #fff;
-  -webkit-box-shadow: 0 0 0 3px #00ad99;
-          box-shadow: 0 0 0 3px #00ad99;
+  -webkit-box-shadow: 0 0 0 3px #005f73;
+          box-shadow: 0 0 0 3px #005f73;
   border-radius: 50%;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 #app .tasks_group ul li input:checked {
-  -webkit-box-shadow: 0 0 0 3px #00ad99, inset 0 0 0 3px #fff, inset 0 0 0 10px #00ad99;
-          box-shadow: 0 0 0 3px #00ad99, inset 0 0 0 3px #fff, inset 0 0 0 10px #00ad99;
+  -webkit-box-shadow: 0 0 0 3px #005f73, inset 0 0 0 3px #fff, inset 0 0 0 10px #005f73;
+          box-shadow: 0 0 0 3px #005f73, inset 0 0 0 3px #fff, inset 0 0 0 10px #005f73;
 }
 
 #app .tasks_group ul li p {
@@ -192,9 +153,162 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #ff0066;
+  color: #c1121f;
   font-size: 18px;
   background: #fff;
   border-radius: 50%;
+}
+
+#app .tasks_group ul li .for_follow {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#app .tasks_group ul li .for_follow a {
+  height: 50px;
+  width: 50px;
+  font-size: 1.5em;
+  border-radius: 50%;
+  color: #fff;
+  background: #005f73;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#app .tasks_group ul li .for_follow a:not(:last-child) {
+  margin-right: 10px;
+}
+
+#app .tasks_group ul li .for_follow a:hover {
+  -webkit-animation: jello-horizontal 0.9s both;
+          animation: jello-horizontal 0.9s both;
+}
+
+@-webkit-keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+            transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+            transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+#app .tasks_form {
+  position: relative;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0 -2.5px 0 #005f73;
+          box-shadow: 0 -2.5px 0 #005f73;
+}
+
+#app .tasks_form input {
+  padding: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  width: 70%;
+}
+
+#app .tasks_form input:hover, #app .tasks_form input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#app .tasks_form #as_btn {
+  cursor: pointer;
+  border-radius: 0 0px 4px 0;
+  background: #005f73;
+}
+
+#app .tasks_form #as_btn a {
+  color: #fff;
+  font-weight: 500;
+}
+
+#app .tasks_form #as_btn::before {
+  background: #fff;
+}
+
+#app .tasks_form #as_btn:hover a {
+  color: #005f73;
 }
 /*# sourceMappingURL=style.css.map */
